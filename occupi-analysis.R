@@ -207,18 +207,18 @@ plot_grid_hour_by_dow_facet <- function ( d ) {
 # 8. What about a calendar-like view?
 # This does not work yet
 # plot_grid_calendar <- function ( d ) {
-	d$one_day_ts <- build_one_day_ts( d )
-	
-	x_breaks <- seq( min( as.POSIXct( d$date ) ), max( as.POSIXct( d$date ) ), by=86400 )
-	y_breaks <- seq( as.POSIXct( "2013-06-01 09:00" ), as.POSIXct( "2013-06-01 18:00" ), by=15*60 )
-	
-	return(
-		ggplot( d, aes( x=timestamp, y=one_day_ts ) ) +
-		scale_x_datetime( name="Date" ) +
-		scale_y_datetime( name="Time of Day", limits=c( as.POSIXct( "2013-06-01 09:00" ), as.POSIXct( "2013-06-01 18:00" ) ) ) +
-		stat_bin2d( breaks=list( x=x_breaks, y=y_breaks ) ) +
-		scale_fill_continuous( high="red", low="white", name="Positive Readings", labels=comma ) +
-		my_theme( ) +
-		ggtitle( "Positive Readings Calendar" )
-	)
-}
+#	d$one_day_ts <- build_one_day_ts( d )
+#	
+#	x_breaks <- seq( min( as.POSIXct( d$date ) ), max( as.POSIXct( d$date ) ), by=86400 )
+#	y_breaks <- seq( as.POSIXct( "2013-06-01 09:00" ), as.POSIXct( "2013-06-01 18:00" ), by=15*60 )
+#	
+#	return(
+#		ggplot( d, aes( x=timestamp, y=one_day_ts ) ) +
+#		scale_x_datetime( name="Date" ) +
+#		scale_y_datetime( name="Time of Day", limits=c( as.POSIXct( "2013-06-01 09:00" ), as.POSIXct( "2013-06-01 18:00" ) ) ) +
+#		stat_bin2d( breaks=list( x=x_breaks, y=y_breaks ) ) +
+#		scale_fill_continuous( high="red", low="white", name="Positive Readings", labels=comma ) +
+#		my_theme( ) +
+#		ggtitle( "Positive Readings Calendar" )
+#	)
+#}
